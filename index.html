@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apartman Acalin · Zlarin — Svjetlost otoka, more na dohvat</title>
+<meta name="description" content="Apartman Acalin na Zlarinu — svijetli obiteljski smještaj na otoku bez automobila. Pogled na more, koraljna baština, bistre uvale. Rezervirajte mirni otočni odmor." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+:root{
+  --paper:#FBFAF7; --paper2:#F2EFE8; --ink:#15302F; --ink-soft:#4B5F5D;
+  --turq:#1E9BA0; --turq-deep:#147A7E; --coral:#E8734A; --coral-deep:#CC5A33;
+  --line:rgba(21,48,47,.12);
+  --serif:'Fraunces',serif; --sans:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.015em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 30px}
+.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--turq-deep)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:.83rem;font-weight:600;letter-spacing:.02em;padding:.95em 1.8em;border-radius:99px;transition:.35s cubic-bezier(.2,.7,.2,1);cursor:pointer;border:1.5px solid transparent}
+.btn-solid{background:var(--coral);color:#fff}
+.btn-solid:hover{background:var(--coral-deep);transform:translateY(-2px)}
+.btn-turq{background:var(--turq);color:#fff}
+.btn-turq:hover{background:var(--turq-deep);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:.4s}
+header.scrolled{background:rgba(251,250,247,.92);backdrop-filter:blur(14px);padding:11px 0;box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-size:1.45rem;font-weight:600;color:#fff;transition:color .4s;display:flex;flex-direction:column}
+.logo small{font-family:var(--sans);font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;opacity:.85;margin-top:1px}
+header.scrolled .logo{color:var(--ink)}
+.nav-links{display:none;gap:32px}
+@media(min-width:980px){.nav-links{display:flex;align-items:center}}
+.nav-links a.lnk{font-size:.84rem;font-weight:500;color:#fff;opacity:.92;transition:.3s}
+header.scrolled .nav-links a.lnk{color:var(--ink)}
+.nav-links a.lnk:hover{color:var(--turq);opacity:1}
+.nav-cta{display:flex;gap:10px}
+.nav .btn{padding:.65em 1.3em;font-size:.76rem}
+header:not(.scrolled) .btn-ghost{border-color:rgba(255,255,255,.65);color:#fff}
+header:not(.scrolled) .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+/* hero slider */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden}
+.hero-swiper,.hero-swiper .swiper-slide{height:100%}
+.hero-swiper .swiper-slide{position:relative}
+.hero-swiper .swiper-slide .bg{position:absolute;inset:0;overflow:hidden}
+.hero-swiper .swiper-slide .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1)}
+.hero-swiper .swiper-slide-active .bg img{animation:kb 7s ease-out forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(8,30,30,.4),rgba(8,30,30,.1) 40%,rgba(8,30,30,.55));pointer-events:none}
+.hero-content{position:absolute;inset:0;z-index:3;display:flex;align-items:center;pointer-events:none}
+.hero-content .wrap{pointer-events:auto}
+.hero-content .eyebrow{color:#fff}
+.hero-content h1{color:#fff;font-size:clamp(2.9rem,8.5vw,7rem);font-weight:500;margin:.18em 0 .3em;max-width:15ch}
+.hero-content p{color:#fff;opacity:.94;font-size:clamp(1rem,1.5vw,1.22rem);max-width:44ch}
+.hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-prog{position:absolute;bottom:30px;left:0;right:0;z-index:4;display:flex;gap:10px;justify-content:center}
+.hero-prog button{width:34px;height:3px;border-radius:2px;border:none;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s;padding:0}
+.hero-prog button.on{background:#fff;width:48px}
+
+/* intro / manifest */
+.intro{padding:clamp(90px,13vh,160px) 0;text-align:center}
+.intro .eyebrow{display:block;margin-bottom:24px}
+.intro h2{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:500;max-width:18ch;margin:0 auto}
+.intro h2 em{font-style:italic;color:var(--coral-deep)}
+.intro .lead{max-width:56ch;margin:32px auto 0;color:var(--ink-soft);font-size:1.05rem}
+.intro .chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.chip{font-size:.8rem;font-weight:500;padding:.6em 1.2em;border-radius:99px;background:var(--paper2);color:var(--ink-soft)}
+.chip b{color:var(--turq-deep)}
+
+/* parallax band */
+.band{position:relative;height:62vh;min-height:440px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.band .px{position:absolute;inset:-15% 0;width:100%;height:130%;object-fit:cover;will-change:transform}
+.band::after{content:"";position:absolute;inset:0;background:rgba(8,30,30,.42)}
+.band .bx{position:relative;z-index:2;color:#fff;max-width:680px;padding:0 28px}
+.band .bx h2{font-size:clamp(1.9rem,4.4vw,3.2rem);font-weight:500;font-style:italic}
+.band .bx p{margin-top:16px;opacity:.92;font-size:1.05rem}
+
+/* rooms alternating rows */
+.rooms{padding:clamp(80px,12vh,150px) 0}
+.sec-head{text-align:center;margin-bottom:64px}
+.sec-head .eyebrow{display:block;margin-bottom:16px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:500}
+.row{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,5vw,80px);align-items:center;margin-bottom:clamp(60px,9vh,120px)}
+.row:nth-child(even) .r-img{order:2}
+.r-img{overflow:hidden;border-radius:6px;position:relative}
+.r-img img{width:100%;height:62vh;min-height:420px;object-fit:cover;transition:transform 1.2s ease}
+.r-img:hover img{transform:scale(1.05)}
+.r-img .tag{position:absolute;top:18px;left:18px;background:var(--paper);color:var(--turq-deep);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.5em 1em;border-radius:99px}
+.r-copy h3{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:500;margin-bottom:8px}
+.r-copy .cap{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:20px}
+.r-copy p{color:var(--ink-soft);margin-bottom:22px}
+.amen{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.amen span{font-size:.76rem;font-weight:500;padding:.45em .95em;background:var(--paper2);border-radius:99px;color:var(--ink-soft)}
+.r-foot{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.r-foot .price{font-family:var(--serif);font-size:1.7rem;font-weight:600}
+.r-foot .price small{font-family:var(--sans);font-size:.78rem;font-weight:400;color:var(--ink-soft)}
+@media(max-width:880px){.row{grid-template-columns:1fr;gap:30px}.row:nth-child(even) .r-img{order:0}.r-img img{height:52vh}}
+
+/* family */
+.family{padding:clamp(80px,12vh,150px) 0;background:var(--paper2)}
+.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.fam-img{border-radius:6px;overflow:hidden}
+.fam-img img{width:100%;height:64vh;min-height:440px;object-fit:cover}
+.fam-copy .eyebrow{display:block;margin-bottom:16px}
+.fam-copy h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:500;margin-bottom:22px}
+.fam-copy p{color:var(--ink-soft);margin-bottom:16px}
+.fam-copy .sign{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--coral-deep);margin-top:18px}
+@media(max-width:880px){.fam-grid{grid-template-columns:1fr;gap:34px}}
+
+/* things to do */
+.todo{padding:clamp(80px,12vh,150px) 0}
+.todo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px}
+.tcard{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:.4s;transform:translateY(0)}
+.tcard:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(21,48,47,.1)}
+.tcard .ph{height:230px;overflow:hidden}
+.tcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s ease}
+.tcard:hover .ph img{transform:scale(1.07)}
+.tcard .bd{padding:26px}
+.tcard h3{font-size:1.45rem;font-weight:500;margin-bottom:10px}
+.tcard p{font-size:.92rem;color:var(--ink-soft)}
+@media(max-width:880px){.todo-grid{grid-template-columns:1fr}}
+
+/* horizontal gallery */
+.hgal{padding:clamp(80px,12vh,150px) 0;overflow:hidden}
+.hgal .sec-head{text-align:left;margin-bottom:40px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.hgal .sec-head h2{font-size:clamp(1.9rem,4vw,3rem)}
+.hgal .hint{font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.htrack{display:flex;gap:20px;cursor:grab;padding-left:30px;user-select:none}
+.htrack.drag{cursor:grabbing}
+.htrack figure{flex:0 0 clamp(280px,40vw,440px);height:clamp(340px,52vh,520px);overflow:hidden;border-radius:6px}
+.htrack figure img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+
+/* location */
+.loc{padding:clamp(80px,12vh,150px) 0;background:var(--paper2)}
+.loc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.loc-info .eyebrow{display:block;margin-bottom:16px}
+.loc-info h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:500;margin-bottom:22px}
+.loc-info p{color:var(--ink-soft);margin-bottom:16px}
+.loc-info ul{list-style:none;margin:24px 0}
+.loc-info li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:16px;font-size:.95rem}
+.loc-info li b{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--turq-deep);min-width:90px}
+.map-fr{border-radius:8px;overflow:hidden;border:1px solid var(--line);height:460px}
+.map-fr iframe{width:100%;height:100%;border:0}
+@media(max-width:880px){.loc-grid{grid-template-columns:1fr;gap:34px}}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);padding:clamp(70px,10vh,120px) 0 40px}
+.foot-cta{text-align:center;padding-bottom:64px;border-bottom:1px solid rgba(251,250,247,.16);margin-bottom:48px}
+.foot-cta h2{font-size:clamp(2rem,5vw,3.6rem);font-weight:500;font-style:italic;margin-bottom:14px}
+.foot-cta p{opacity:.82;margin-bottom:30px}
+.foot-cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-mark{font-family:var(--serif);font-size:2.2rem;font-weight:600;margin-bottom:14px}
+.foot-mark small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;opacity:.7;margin-top:4px;font-weight:500}
+.foot-grid p{opacity:.8;font-size:.92rem;max-width:32ch}
+.foot-col h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:16px;font-weight:600}
+.foot-col a,.foot-col p{display:block;opacity:.85;font-size:.95rem;margin-bottom:9px}
+.foot-col a:hover{color:var(--turq)}
+.foot-bot{display:flex;justify-content:space-between;margin-top:48px;padding-top:26px;border-top:1px solid rgba(251,250,247,.14);font-size:.78rem;opacity:.6;flex-wrap:wrap;gap:10px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:32px}}
+
+/* mobile booking bar */
+.mbar{position:fixed;bottom:0;left:0;right:0;z-index:1500;background:rgba(251,250,247,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:11px 16px;display:none;gap:10px}
+.mbar .btn{flex:1;justify-content:center;padding:.85em}
+@media(max-width:760px){.mbar{display:flex}footer{padding-bottom:92px}}
+
+.reveal{opacity:0;transform:translateY(36px)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero-swiper .swiper-slide-active .bg img{animation:none!important}
+}
+</style>
+</head>
+<body id="top">
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Acalin<small>Zlarin · otok</small></a>
+    <nav class="nav-links">
+      <a href="#intro" class="lnk">Otok</a>
+      <a href="#smjestaj" class="lnk">Smještaj</a>
+      <a href="#obitelj" class="lnk">Obitelj</a>
+      <a href="#dozivljaji" class="lnk">Doživljaji</a>
+      <a href="#lokacija" class="lnk">Kako doći</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#smjestaj" class="btn btn-solid">Rezerviraj</a>
+      <a href="#lokacija" class="btn btn-ghost">Upit</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="swiper hero-swiper" id="heroSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><div class="bg"><img src="https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=2000&q=80" alt="Bistro Jadransko more kod Zlarina"/></div></div>
+      <div class="swiper-slide"><div class="bg"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=2000&q=80" alt="Skrivena uvala za kupanje"/></div></div>
+      <div class="swiper-slide"><div class="bg"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=80" alt="Borova staza na otoku bez automobila"/></div></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="wrap">
+      <span class="eyebrow">Zlarin · koraljni otok bez automobila</span>
+      <h1>Svjetlost otoka, more na dohvat.</h1>
+      <p>Obiteljski apartman Acalin — svijetli smještaj s pogledom na Jadran, ondje gdje nema cesta ni žurbe.</p>
+      <div class="hero-cta">
+        <a href="#smjestaj" class="btn btn-solid">Rezerviraj boravak</a>
+        <a href="#lokacija" class="btn btn-turq">Kako doći</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-prog" id="heroProg">
+    <button class="on" data-i="0" aria-label="Slajd 1"></button>
+    <button data-i="1" aria-label="Slajd 2"></button>
+    <button data-i="2" aria-label="Slajd 3"></button>
+  </div>
+</section>
+
+<section class="intro" id="intro">
+  <div class="wrap">
+    <span class="eyebrow reveal">Dobrodošli na Zlarin</span>
+    <h2 class="reveal">Otok bez automobila, gdje dan miriše na <em>more, borovinu i kamen</em>.</h2>
+    <p class="lead reveal">Zlarin je tihi koraljni otok nadomak Šibenika — "Zlatni otok" ronilaca koralja. Nema cesta ni prometne buke, samo kamene kuće, bistre uvale i svjetlost koja se zadržava do kasno. Apartman Acalin vaše je svijetlo utočište usred te tišine.</p>
+    <div class="chips reveal">
+      <span class="chip"><b>0</b> automobila na otoku</span>
+      <span class="chip"><b>~22 min</b> trajektom iz Šibenika</span>
+      <span class="chip"><b>Pogled</b> na more</span>
+      <span class="chip"><b>Koraljna</b> baština</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <img class="px" id="px1" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80" alt="Otvoreno Jadransko more" />
+  <div class="bx">
+    <h2>"More je ovdje uvijek bilo prvi susjed."</h2>
+    <p>Probudite se uz zvuk valova, a ne automobila — i pustite da vam otok diktira ritam dana.</p>
+  </div>
+</section>
+
+<section class="rooms" id="smjestaj">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Smještaj</span><h2>Naši apartmani i sobe</h2></div>
+
+    <div class="row reveal">
+      <div class="r-img"><span class="tag">Pogled na more</span><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80" alt="Apartman Koralj"/></div>
+      <div class="r-copy">
+        <h3>Apartman Koralj</h3>
+        <div class="cap">4 osobe · 1. kat · terasa s pogledom</div>
+        <p>Naš najsvjetliji apartman s odvojenom spavaćom sobom i prostranom terasom okrenutom otvorenom moru. Jutarnja kava uz zvuk valova, večeri uz zalazak nad kanalom.</p>
+        <div class="amen"><span>Pogled na more</span><span>Terasa</span><span>Klima</span><span>Potpuna kuhinja</span><span>Wi-Fi</span></div>
+        <div class="r-foot"><span class="price">€95 <small>/ noć</small></span><a href="#lokacija" class="btn btn-solid">Provjeri dostupnost</a></div>
+      </div>
+    </div>
+
+    <div class="row reveal">
+      <div class="r-img"><span class="tag">Vrt &amp; borovi</span><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Apartman Pinija"/></div>
+      <div class="r-copy">
+        <h3>Apartman Pinija</h3>
+        <div class="cap">2–3 osobe · prizemlje · vlastiti vrt</div>
+        <p>Romantičan studio u hladu starih borova, s vlastitim kutkom vrta i mirisom mediteranskog bilja. Savršen za parove koji traže mir i privatnost.</p>
+        <div class="amen"><span>Vrt</span><span>Hlad borova</span><span>Klima</span><span>Čajna kuhinja</span><span>Wi-Fi</span></div>
+        <div class="r-foot"><span class="price">€72 <small>/ noć</small></span><a href="#lokacija" class="btn btn-turq">Pošalji upit</a></div>
+      </div>
+    </div>
+
+    <div class="row reveal">
+      <div class="r-img"><span class="tag">Krovna terasa</span><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Apartman Kamen"/></div>
+      <div class="r-copy">
+        <h3>Apartman Kamen</h3>
+        <div class="cap">5 osoba · potkrovlje · panorama</div>
+        <p>Najveći prostor za obitelji — dvije sobe i krovna terasa s panoramom kanala i susjednih otoka. Mjesto za duge ljetne dane i zajedničke večeri pod zvijezdama.</p>
+        <div class="amen"><span>Krovna terasa</span><span>2 sobe</span><span>Panorama</span><span>Klima</span><span>Wi-Fi</span></div>
+        <div class="r-foot"><span class="price">€120 <small>/ noć</small></span><a href="#lokacija" class="btn btn-solid">Provjeri dostupnost</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="family" id="obitelj">
+  <div class="wrap fam-grid">
+    <div class="fam-img reveal"><img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1200&q=80" alt="Kamena kuća obitelji Acalin na Zlarinu"/></div>
+    <div class="fam-copy reveal">
+      <span class="eyebrow">O nama · obitelj Acalin</span>
+      <h2>Domaćini smo, prije svega.</h2>
+      <p>Acalin je naše prezime, a Zlarin generacijama naš dom. Otvorili smo svoju kamenu kuću gostima jer volimo dijeliti ono najljepše što imamo — mir otoka, savjet kamo na kupanje i pokoju priču o koraljarima koji su Zlarinu donijeli ime "Zlatni otok".</p>
+      <p>Dočekat ćemo vas na rivi, pomoći s prtljagom kroz uske uličice (auta nema!) i pobrinuti se da se osjećate kao kod kuće — samo s ljepšim pogledom. Naši gosti dolaze iz cijele Europe; rado se sporazumijemo na njemačkom, češkom i engleskom.</p>
+      <div class="sign">— Silvija &amp; obitelj Acalin</div>
+    </div>
+  </div>
+</section>
+
+<section class="todo" id="dozivljaji">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Doživljaji</span><h2>Što vas čeka na Zlarinu</h2></div>
+    <div class="todo-grid">
+      <div class="tcard reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Koraljna baština"/></div><div class="bd"><h3>Koraljna baština</h3><p>"Zlatni otok" ronilaca koralja — upoznajte priču koja je stoljećima oblikovala svaku kamenu kuću i svaki kutak luke.</p></div></div>
+      <div class="tcard reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=900&q=80" alt="Uvala za kupanje"/></div><div class="bd"><h3>Bistre uvale</h3><p>Plitko, kristalno more u uvalama do kojih se stiže pješice. Često ćete biti jedini na plaži — to je luksuz Zlarina.</p></div></div>
+      <div class="tcard reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80" alt="Šetnja bez automobila"/></div><div class="bd"><h3>Šetnje bez auta</h3><p>Staze kroz borove, masline i kamen, tišina umjesto prometa. Otok se najljepše upoznaje laganim hodom.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="hgal">
+  <div class="wrap sec-head reveal"><div><span class="eyebrow">Galerija</span><h2>Otok u kadrovima</h2></div><span class="hint">← povucite za listanje →</span></div>
+  <div class="htrack" id="htrack">
+    <figure><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80" alt="Terasa s pogledom na more"/></figure>
+    <figure><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=80" alt="Svijetli interijer apartmana"/></figure>
+    <figure><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=900&q=80" alt="Kamene uličice otoka"/></figure>
+    <figure><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80" alt="Mediteranska spavaća soba"/></figure>
+    <figure><img src="https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=900&q=80" alt="Borovi uz more"/></figure>
+    <figure><img src="https://images.unsplash.com/photo-1437846972679-9e6e537be46e?auto=format&fit=crop&w=900&q=80" alt="Zalazak sunca nad Jadranom"/></figure>
+    <figure><img src="https://images.unsplash.com/photo-1496318447583-f524534e9ce1?auto=format&fit=crop&w=900&q=80" alt="Detalj sunčane terase"/></figure>
+  </div>
+</section>
+
+<section class="loc" id="lokacija">
+  <div class="wrap loc-grid">
+    <div class="loc-info reveal">
+      <span class="eyebrow">Kako doći &amp; upit</span>
+      <h2>Trajektom iz Šibenika — i grad ostaje iza vas.</h2>
+      <p>Zlarin je otok bez automobila. Stiže se redovitim trajektom ili brodicom iz Šibenika, plovidba traje oko 22 minute. Na rivi vas dočekujemo i vodimo do apartmana — kroz uličice po kojima se hoda, ne vozi.</p>
+      <ul>
+        <li><b>Trajekt</b><span>Šibenik → Zlarin, redovne dnevne linije (Jadrolinija)</span></li>
+        <li><b>Vožnja</b><span>oko 22 minute mirne plovidbe kanalom</span></li>
+        <li><b>Parking</b><span>auto ostavljate u Šibeniku — na otoku nije potreban</span></li>
+        <li><b>Dolazak</b><span>dočekujemo vas na rivi uz najavu termina</span></li>
+      </ul>
+      <div class="hero-cta" style="margin-top:28px">
+        <a href="tel:+385989148911" class="btn btn-solid">Nazovi +385 98 914 8911</a>
+        <a href="mailto:silvija.acalin@yahoo.com?subject=Upit%20za%20rezervaciju%20-%20Apartman%20Acalin" class="btn btn-ghost">Pošalji e-mail</a>
+      </div>
+    </div>
+    <div class="map-fr">
+      <iframe src="https://maps.google.com/maps?q=Apartman+Acalin+Zlarin&output=embed" loading="lazy" title="Lokacija Apartman Acalin Zlarin"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-cta">
+      <h2>Vaš mirni otok vas čeka.</h2>
+      <p>Javite nam termin — odgovaramo brzo i osobno.</p>
+      <div class="btns">
+        <a href="tel:+385989148911" class="btn btn-solid">Rezerviraj boravak</a>
+        <a href="mailto:silvija.acalin@yahoo.com?subject=Upit%20-%20Apartman%20Acalin" class="btn btn-turq">Pošalji upit</a>
+      </div>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-mark">Apartman Acalin<small>Zlarin · otok bez automobila</small></div>
+        <p>Obiteljski smještaj s pogledom na more na koraljnom otoku Zlarinu. Vaš mirni bijeg na Jadranu.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+385989148911">+385 98 914 8911</a>
+        <a href="mailto:silvija.acalin@yahoo.com">silvija.acalin@yahoo.com</a>
+        <p>Zlarin, Šibensko-kninska županija</p>
+      </div>
+      <div class="foot-col">
+        <h4>Stranica</h4>
+        <a href="#smjestaj">Smještaj &amp; cijene</a>
+        <a href="#obitelj">Obitelj Acalin</a>
+        <a href="#lokacija">Kako doći</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Apartman Acalin · Zlarin</span>
+      <span>Willkommen · Vítejte · Welcome</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+385989148911" class="btn btn-solid">Rezerviraj</a>
+  <a href="mailto:silvija.acalin@yahoo.com?subject=Upit%20-%20Apartman%20Acalin" class="btn btn-turq">Upit</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let lenis;
+if(!reduce){
+  lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
+  function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll', ScrollTrigger.update);
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id.length>1 && document.querySelector(id)){
+      e.preventDefault();
+      if(lenis) lenis.scrollTo(id,{offset:-66}); else document.querySelector(id).scrollIntoView({behavior:'smooth'});
+    }
+  });
+});
+
+const hdr=document.getElementById('hdr');
+const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>60);
+onScroll(); window.addEventListener('scroll',onScroll);
+
+// hero fade swiper
+const heroSw = new Swiper('#heroSwiper',{
+  effect:'fade', fadeEffect:{crossFade:true}, speed:1100, loop:true,
+  allowTouchMove:false, autoplay:reduce?false:{delay:4200,disableOnInteraction:false}
+});
+const progBtns=[...document.querySelectorAll('#heroProg button')];
+heroSw.on('slideChange',()=>{
+  const i=heroSw.realIndex;
+  progBtns.forEach((b,n)=>b.classList.toggle('on',n===i));
+});
+progBtns.forEach(b=>b.addEventListener('click',()=>heroSw.slideToLoop(+b.dataset.i)));
+
+// reveals + parallax
+if(!reduce){
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+  gsap.to('#px1',{yPercent:14,ease:'none',scrollTrigger:{trigger:'.band',start:'top bottom',end:'bottom top',scrub:0.6}});
+}
+
+// horizontal draggable gallery
+const track=document.getElementById('htrack');
+let down=false,sx=0,sl=0;
+track.addEventListener('pointerdown',e=>{down=true;track.classList.add('drag');sx=e.clientX;sl=track.scrollLeft;});
+window.addEventListener('pointerup',()=>{down=false;track.classList.remove('drag');});
+window.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=sl-(e.clientX-sx);});
+track.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)<Math.abs(e.deltaY)){track.scrollLeft+=e.deltaY;}},{passive:true});
+</script>
+</body>
+</html>
